@@ -3,7 +3,7 @@
 Plugin Name: JOLT™ ThemeFork
 Plugin URI: https://github.com/johnoltmans/JOLT-ThemeFork
 Description: Instantly create a clean, functional child theme from your currently active WordPress theme — with one click.
-Version: 1.5
+Version: 1.6
 Author: John Oltmans
 Author URI: https://www.johnoltmans.nl
 License: GPLv2 or later
@@ -62,6 +62,8 @@ function jolt_themefork_delete_child_theme($child_slug) {
 function jolt_themefork_create_child_theme($parent_slug) {
     $themes = wp_get_themes();
 
+
+    
     if (!isset($themes[$parent_slug])) {
         return new WP_Error('invalid_theme', 'Selected theme does not exist.');
     }
@@ -99,11 +101,14 @@ add_action('wp_enqueue_scripts', function() {
 
     file_put_contents($child_dir . '/functions.php', $functions);
 
-    // Voeg screenshot.jpg toe vanuit de pluginmap (indien aanwezig)
-$plugin_screenshot = plugin_dir_path(__FILE__) . 'assets/screenshot.jpg';
-if (file_exists($plugin_screenshot)) {
-    copy($plugin_screenshot, $child_dir . '/screenshot.jpg');
+// Screenshot kopiëren
+$screenshot_src = plugin_dir_path(__FILE__) . 'assets/screenshot.jpg';
+$screenshot_dest = $child_dir . '/screenshot.jpg';
+
+if (file_exists($screenshot_src)) {
+    copy($screenshot_src, $screenshot_dest);
 }
+
 
     return $child_slug;
 }
@@ -111,16 +116,29 @@ if (file_exists($plugin_screenshot)) {
 // ====== PLUGIN MENU EN INSTELLINGEN PAGINA ======
 
 // Voeg instellingen menu toe in admin
-add_action('admin_menu', 'jolt_themefork_add_settings_menu');
-function jolt_themefork_add_settings_menu() {
-    add_options_page(
-        'JOLT ThemeFork Settings',
-        'JOLT ThemeFork',
+add_action('admin_menu', 'jolt_add_settings_menu');
+function jolt_add_settings_menu() {
+    add_menu_page(
+        'JOLT Settings',
+        'JOLT Settings',
         'manage_options',
-        'jolt-themefork',
-        'jolt_themefork_settings_page'
+        'jolt-settings',
+        'jolt_settings_page',
+        'dashicons-admin-generic',
+        90
     );
 }
+
+function jolt_settings_page() {
+    ?>
+    <div class="wrap">
+        <h1>JOLT Settings</h1>
+        <p>Welkom bij de instellingenpagina van JOLT.</p>
+        <!-- Hier komt je HTML en PHP voor de instellingen -->
+    </div>
+    <?php
+}
+
 
 // Voeg een "Settings" link toe bij de plugin op plugins-pagina
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'jolt_themefork_settings_link');
@@ -259,4 +277,3 @@ function jolt_themefork_settings_page() {
     </div>
     <?php
 }
-
