@@ -3,7 +3,7 @@
 Plugin Name: JOLT™ ThemeFork
 Plugin URI: https://github.com/johnoltmans/JOLT-ThemeFork
 Description: Instantly create a clean, functional child theme from your currently active WordPress theme — with one click.
-Version: 1.6
+Version: 1.7
 Author: John Oltmans
 Author URI: https://www.johnoltmans.nl
 License: GPLv2 or later
@@ -116,40 +116,42 @@ if (file_exists($screenshot_src)) {
 // ====== PLUGIN MENU EN INSTELLINGEN PAGINA ======
 
 // Voeg instellingen menu toe in admin
-add_action('admin_menu', 'jolt_add_settings_menu');
-function jolt_add_settings_menu() {
+add_action('admin_menu', 'jolt_themefork_add_admin_menu');
+function jolt_themefork_add_admin_menu() {
+    // Hoofdmenu item
     add_menu_page(
-        'JOLT Settings',
-        'JOLT Settings',
-        'manage_options',
-        'jolt-settings',
-        'jolt_settings_page',
-        'dashicons-admin-generic',
-        90
+        'JOLT ThemeFork',                  // Pagina titel
+        'JOLT ThemeFork',                  // Menu titel in sidebar
+        'manage_options',                  // Vereiste rechten
+        'jolt-themefork',                  // Slug
+        'jolt_themefork_settings_page',    // Callback functie
+        'dashicons-layout',      // Dashicon (je kan 'dashicons-hammer' of iets anders gebruiken)
+        60                                 // Positie in menu
     );
-}
 
-function jolt_settings_page() {
-    ?>
-    <div class="wrap">
-        <h1>JOLT Settings</h1>
-        <p>Welkom bij de instellingenpagina van JOLT.</p>
-        <!-- Hier komt je HTML en PHP voor de instellingen -->
-    </div>
-    <?php
+    // Optioneel: submenu toevoegen als je meerdere pagina's wil
+    // add_submenu_page(
+    //     'jolt-themefork',
+    //     'Extra instellingen',
+    //     'Extra',
+    //     'manage_options',
+    //     'jolt-themefork-extra',
+    //     'jolt_themefork_extra_page'
+    // );
 }
 
 
 // Voeg een "Settings" link toe bij de plugin op plugins-pagina
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'jolt_themefork_settings_link');
 function jolt_themefork_settings_link($links) {
-    $settings_link = '<a href="' . admin_url('options-general.php?page=jolt-themefork') . '">Settings</a>';
-    array_unshift($links, $settings_link);
+    $settings_link = '<a href="' . admin_url('admin.php?page=jolt-themefork') . '">Settings</a>';
+    array_push($links, $settings_link);
     return $links;
 }
 
 // Instellingenpagina (deze functie toont het scherm in WP admin)
 function jolt_themefork_settings_page() {
+
     // Verwerk DELETE child theme actie
     if (isset($_POST['jolt_themefork_delete']) && check_admin_referer('jolt_themefork_nonce_action', 'jolt_themefork_nonce_field')) {
         $child_slug = sanitize_text_field($_POST['jolt_themefork_delete']);
@@ -277,3 +279,4 @@ function jolt_themefork_settings_page() {
     </div>
     <?php
 }
+
