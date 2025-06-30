@@ -4,6 +4,19 @@
 Instantly create a clean, functional child theme from your currently active WordPress theme — with one click.<br>
 Privacy Focussed, safe and open source.
 
+#
+### Download your plugin here
+You can download your plugin [here](https://github.com/johnoltmans/JOLT-ThemeFork/archive/refs/heads/main.zip).<br>
+You can read how to install [here](https://github.com/johnoltmans/JOLT-Dashboard-Notes?tab=readme-ov-file#how-to-install-the-plugin).
+#
+
+![Screenshot 2025-06-30 at 15-17-49 JOLT ThemeFork ‹ word](https://github.com/user-attachments/assets/84d46ab8-a117-4557-80e5-2a96aa97a129)
+![Screenshot 2025-06-30 at 15-21-45 Thema's ‹ wordpressde](https://github.com/user-attachments/assets/ecde2982-634c-4f83-b8f0-99a1daf6e9c5)
+
+#
+# How to install the plugin.
+You can read https://github.com/Smoshed/WordPress-Plugins/wiki/How-to-install-the-plugins for more info.
+
 ---
 ## 🛡 License
 
