@@ -7,7 +7,7 @@ Privacy Focussed, safe and open source.
 #
 ### Download your plugin here
 You can download your plugin [here](https://github.com/johnoltmans/JOLT-ThemeFork/archive/refs/heads/main.zip).<br>
-You can read how to install [here](https://github.com/johnoltmans/JOLT-Dashboard-Notes?tab=readme-ov-file#how-to-install-the-plugin).
+You can read how to install [here](https://github.com/johnoltmans/WordPress/wiki/How-to-install-the-plugins).
 #
 
 ![Screenshot 2025-06-30 at 15-17-49 JOLT ThemeFork ‹ word](https://github.com/user-attachments/assets/84d46ab8-a117-4557-80e5-2a96aa97a129)
