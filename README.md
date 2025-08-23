@@ -3,12 +3,12 @@
 
 Instantly create a clean, functional child theme from your currently active WordPress theme — with one click.<br>
 
-All the plugins and or themes that i present to you are [privacy focussed, secure and open source](https://github.com/johnoltmans/WordPress/blob/main/SECURITY.md).
+All the plugins and or themes that i present to you are [privacy focussed, secure and open source](https://github.com/DevAldon/WordPress/blob/main/SECURITY.md).
 
 #
 ### Download your plugin here
-You can download your plugin [here](https://github.com/johnoltmans/JOLT-ThemeFork/archive/refs/heads/main.zip).<br>
-You can read how to install [here](https://github.com/johnoltmans/WordPress/wiki/How-to-install-the-plugins).
+You can download your plugin [here](https://github.com/DevAldon/JOLT-ThemeFork/archive/refs/heads/main.zip).<br>
+You can read how to install [here](https://github.com/DevAldon/WordPress/wiki/How-to-install-the-plugins).
 #
 
 ![Screenshot 2025-06-30 at 15-17-49 JOLT ThemeFork ‹ word](https://github.com/user-attachments/assets/84d46ab8-a117-4557-80e5-2a96aa97a129)
@@ -17,4 +17,4 @@ You can read how to install [here](https://github.com/johnoltmans/WordPress/wiki
 ## 🛡 Security, Privacy & Usage Policy
 
 To read more about my Security, privacy and Usage Policy,<br>
-Please follow this link: https://github.com/johnoltmans/WordPress/blob/main/SECURITY.md
+Please follow this link: https://github.com/DevAldon/WordPress/blob/main/SECURITY.md
