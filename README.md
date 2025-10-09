@@ -16,4 +16,4 @@ You can read how to install [here](https://github.com/DevAldon/WordPress/wiki/Ho
 ## 🛡 Security, Privacy & Usage Policy
 
 To read more about my Security, privacy and Usage Policy,<br>
-Please follow this link: https://github.com/DevAldon/WordPress/blob/main/SECURITY.md
+Please follow this link: https://github.com/ByAldon/WordPress/blob/main/SECURITY.md
